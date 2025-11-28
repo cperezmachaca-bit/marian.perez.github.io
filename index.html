@@ -1184,25 +1184,18 @@
 
             .nav-menu a {
                 display: block;
-                padding: 15px 20px;
-                width: 100%;
-                font-size: 1.1rem;
+                padding: 15px 0;
             }
 
             .nav-menu a::after {
-                display: none;
+                height: 0;
             }
 
-            .menu-toggle.open .bar:nth-child(2) {
-                opacity: 0;
-            }
-
-            .menu-toggle.open .bar:nth-child(1) {
-                transform: translateY(13.5px) rotate(45deg);
-            }
-
-            .menu-toggle.open .bar:nth-child(3) {
-                transform: translateY(-13.5px) rotate(-45deg);
+            .hero-section {
+                flex-direction: column-reverse;
+                padding: 100px 20px 60px;
+                text-align: center;
+                min-height: auto;
             }
 
             .content-wrapper {
@@ -1210,62 +1203,113 @@
                 text-align: center;
             }
 
-            .hero-section {
-                padding: 80px 40px;
-            }
-
-            .profile-image-wrapper {
-                width: 320px;
-                height: 320px;
-                margin-bottom: 40px;
+            .text-content {
+                max-width: 100%;
+                text-align: center;
+                padding-top: 40px;
             }
 
             .greeting, .name {
                 font-size: 3rem;
+                line-height: 1.1;
             }
 
-            .button-group {
-                justify-content: center;
+            .name {
+                margin-bottom: 20px;
             }
 
             .image-content {
                 margin-right: 0;
+                margin-bottom: 30px;
+            }
+
+            .profile-image-wrapper {
+                width: 250px;
+                height: 250px;
+            }
+
+            .button-group {
+                justify-content: center;
+                gap: 12px;
             }
 
             .about-content {
                 flex-direction: column;
-                text-align: center;
-            }
-
-            .about-text {
-                max-width: 100%;
             }
 
             .about-text h2 {
                 text-align: center;
             }
 
-            .about-image-wrapper {
-                width: 80%;
-                max-width: 500px;
+            .about-text p {
+                max-width: 100%;
             }
 
+            .about-image-wrapper {
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .info-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .info-card {
+                text-align: left;
+            }
+
+            .info-card h3 {
+                text-align: center;
+            }
+
+            .stat-card {
+                padding: 15px 20px;
+                min-width: unset;
+                flex: 1;
+            }
+            
             .stats-grid {
-                justify-content: center;
+                justify-content: space-around;
             }
 
             .projects-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                grid-template-columns: 1fr;
             }
-        }
 
-        @media (max-width: 968px) {
+            .people-two-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .section-block h2 {
+                font-size: 1.8rem;
+            }
+
             .contact-grid {
                 grid-template-columns: 1fr;
             }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .footer-section h3 {
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+            }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             .hero-section {
                 padding: 50px 20px;
             }
@@ -1304,13 +1348,11 @@
                 padding: 24px;
             }
 
-            .contact-info,
-            .contact-form {
+            .contact-info, .contact-form {
                 padding: 30px;
             }
 
-            .contact-info h2,
-            .contact-form h2 {
+            .contact-info h2, .contact-form h2 {
                 font-size: 1.4rem;
             }
 
@@ -1352,13 +1394,11 @@
     </style>
 </head>
 <body>
-    <!-- ===== BARRA DE NAVEGACIÓN (HEADER) ===== -->
     <header class="main-header">
         <div class="header-container">
-            <a href="https://ucsp.edu.pe/" target="_blank" class="logo">
+            <a href="#inicio" class="logo">
                 <img src="https://i.imgur.com/Y1LsJ84.png" alt="UCSP" style="height: 50px; object-fit: contain;">
             </a>
-            
             <nav>
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#inicio" onclick="closeMenu()">Inicio</a></li>
@@ -1367,7 +1407,6 @@
                     <li><a href="#contacto" onclick="closeMenu()">Contacto</a></li>
                 </ul>
             </nav>
-
             <div class="menu-toggle" id="menuToggle">
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -1376,66 +1415,57 @@
         </div>
     </header>
 
-    <!-- SECCIÓN HERO -->
     <section class="hero-section" id="inicio">
         <div class="background-image"></div>
-        
         <div class="geometric-overlay">
             <div class="shape shape1"></div>
             <div class="shape shape2"></div>
             <div class="shape shape3"></div>
         </div>
-        
         <div class="blue-overlay"></div>
-        
         <div class="content-wrapper">
             <div class="text-content">
                 <h1 class="greeting">Hola, soy</h1>
                 <h2 class="name">Marian del Carmen Pérez Machaca</h2>
-                
-                <p class="subtitle">Estudiante de 3er Semestre - Administración en la Universidad Católica San Pablo | Arequipa</p>
-                
+                <p class="subtitle">Estudiante de Ingeniería Empresarial</p>
                 <p class="description">
-                    Apasionada por la gestión empresarial, el liderazgo y la innovación. Te invito a explorar mi trayectoria académica y mis proyectos.
+                    Estudiante de la Universidad Católica San Pablo (UCSP), apasionada por la gestión empresarial, los recursos humanos y la estrategia empresarial. Busco aplicar mis conocimientos y habilidades para generar un impacto positivo.
                 </p>
-                
                 <div class="button-group">
-                    <a href="#sobre-mi" class="btn btn-primary">Conoce más sobre mí</a>
-                    <a href="https://www.linkedin.com/in/tu-perfil-linkedin" target="_blank" class="btn btn-secondary">
-                        Ver mi CV
-                    </a>
+                    <a href="#contacto" class="btn btn-primary">Contáctame</a>
+                    <a href="#proyectos" class="btn btn-secondary">Ver Cursos</a>
                 </div>
             </div>
-            
             <div class="image-content">
                 <div class="profile-image-wrapper">
                     <div class="profile-circle">
-                        <img src="https://i.imgur.com/rt0zBQe.jpeg" alt="Marian Pérez Machaca" class="profile-image">
+                        <img src="https://i.imgur.com/vVVCKPW.png" alt="Marian del Carmen Perez Machaca" class="profile-image">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN: SOBRE MÍ -->
     <section class="about-section" id="sobre-mi">
         <div class="container">
             <div class="section-title">
-                <h1>Sobre mí</h1>
+                <h1>Sobre Mí</h1>
             </div>
-
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Mi historia</h2>
-                    
+                    <h2>Mi Perfil</h2>
                     <p>
-                        Soy estudiante de 3er semestre de Administración en la Universidad Católica San Pablo, apasionada por la gestión empresarial y el liderazgo. Mi objetivo es convertirme en una profesional que genere impacto positivo en las organizaciones.
+                        Soy una estudiante entusiasta de Ingeniería Empresarial de la Universidad Católica San Pablo, cursando el **tercer ciclo**. Mi objetivo es combinar la gestión de recursos humanos y la estrategia empresarial para optimizar procesos y alcanzar metas organizacionales.
                     </p>
-                    
                     <p>
-                        Durante mis estudios, he desarrollado habilidades en áreas clave como finanzas, marketing, recursos humanos y estrategia empresarial. Me caracterizo por ser proactiva, responsable y con gran capacidad de trabajo en equipo.
+                        Durante mi formación, he desarrollado habilidades intermedias en herramientas clave para el análisis de datos y la gestión, como Microsoft Excel, RStudio y SPSS. Estoy constantemente buscando oportunidades para aplicar y expandir mis conocimientos en áreas de alto impacto como el marketing digital y las finanzas corporativas.
                     </p>
-
+                    <p>
+                        Valoro la **responsabilidad** y el **compromiso** como pilares de mi trabajo, y mi enfoque en la **innovación constante** me impulsa a buscar soluciones creativas y eficientes en cualquier proyecto.
+                    </p>
+                    <p>
+                        Actualmente busco oportunidades de prácticas o proyectos que me permitan contribuir en el área de recursos humanos y estrategia empresarial. Me caracterizo por ser proactiva, responsable y con gran capacidad de trabajo en equipo.
+                    </p>
                     <div class="stats-grid">
                         <div class="stat-card">
                             <div class="stat-number">3</div>
@@ -1447,12 +1477,10 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="about-image-section">
                     <img src="https://i.imgur.com/vVVCKPW.png" alt="Marian Pérez Machaca">
                 </div>
             </div>
-
             <div class="info-cards">
                 <div class="info-card">
                     <h3>Habilidades Técnicas</h3>
@@ -1466,7 +1494,6 @@
                         <li>Inteligencia Artificial - Intermedio</li>
                     </ul>
                 </div>
-
                 <div class="info-card">
                     <h3>Valores</h3>
                     <ul>
@@ -1498,14 +1525,13 @@
         </div>
     </section>
 
-    <!-- SECCIÓN PROYECTOS -->
     <section class="projects-section" id="proyectos">
         <div class="container">
             <div class="section-title">
                 <h1>Cursos Académicos</h1>
             </div>
-
             <div class="cycles-container">
+
                 <div class="cycle-item">
                     <div class="cycle-header" onclick="toggleCycle(this)">
                         <h3>Ciclo I</h3>
@@ -1550,329 +1576,209 @@
 
                 <div class="cycle-item">
                     <div class="cycle-header" onclick="toggleCycle(this)">
-                        <h3>Ciclo III (Actual)</h3>
+                        <h3>Ciclo III</h3>
                         <span class="cycle-toggle">+</span>
                     </div>
                     <div class="cycle-content">
                         <div class="courses-list">
                             <ul>
-                                <li>Antropología Filosófica y Teológica</li>
-                                <li>Lógica y Argumentación</li>
-                                <li>Expresión Literaria (E)</li>
-                                <li>Cálculo en una Variable</li>
-                                <li>Análisis de Datos I</li>
-                                <li>Análisis Financiero</li>
-                                <li>Comportamiento del Consumidor</li>
+                                <li>Antropología Filosófica</li>
+                                <li>Cálculo Diferencial</li>
+                                <li>Estadística Descriptiva y Probabilidades</li>
+                                <li>Comportamiento Organizacional</li>
+                                <li>Sistema de Información Gerencial</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- SECCIÓN PROFESORES Y COMPAÑEROS -->
-    <section class="people-section" id="profesores">
-        <div class="container">
+                <div class="cycle-item">
+                    <div class="cycle-header" onclick="toggleCycle(this)">
+                        <h3>Ciclo IV</h3>
+                        <span class="cycle-toggle">+</span>
+                    </div>
+                    <div class="cycle-content">
+                        <div class="courses-list">
+                            <ul>
+                                <li>Teología I</li>
+                                <li>Matemática Financiera</li>
+                                <li>Econometría</li>
+                                <li>Estrategia Empresarial I</li>
+                                <li>Finanzas I</li>
+                                <li>Investigación de Mercados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
             <div class="section-title">
-                <h1>Red Académica</h1>
+                <h1>Proyectos Destacados</h1>
+                <p class="section-subtitle">A lo largo de mis ciclos, he participado en diversos proyectos académicos y personales que han fortalecido mis habilidades de análisis, gestión y trabajo en equipo.</p>
             </div>
 
-            <div class="people-container">
-                <!-- PROFESORES -->
-                <div class="section-block">
-                    <h2>Profesores</h2>
-                    <div class="people-list">
-                        <a href="https://www.linkedin.com/in/ecuadrosv/" target="_blank" class="person-item">
-                            <div class="person-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                                </svg>
-                            </div>
-                            <span class="person-name">Dr. Eduardo Cuadros</span>
-                            <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                            </svg>
-                        </a>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://i.imgur.com/s4j8X7M.png" alt="Análisis de Datos con RStudio" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Análisis de Datos de Facturación con RStudio</h3>
+                        <p class="project-description">
+                            Implementación de análisis estadístico en RStudio para evaluar el impacto de la facturación en una empresa. Incluye limpieza de datos, modelos de regresión y visualización de resultados clave para la toma de decisiones gerenciales.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag tag-blue">RStudio</span>
+                            <span class="tag tag-green">Estadística</span>
+                            <span class="tag tag-purple">Análisis de Datos</span>
+                        </div>
+                        <a href="https://github.com/tu-usuario/proyecto-rstudio" target="_blank" class="project-link">Ver Código/Análisis</a>
                     </div>
                 </div>
 
-                <!-- COMPAÑEROS -->
-                <div class="section-block">
-                    <h2>Compañeros</h2>
-                    <div class="people-two-columns">
-                        <!-- COLUMNA GITHUB -->
-                        <div>
-                            <h3 class="column-header">GitHub</h3>
-                            <div class="people-list">
-                                <a href="https://marializcadenashuillcapacco.github.io/pagina-web/" target="_blank" class="person-item">
-                                    <div class="person-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-                                        </svg>
-                                    </div>
-                                    <span class="person-name">Mariali Zcadenas</span>
-                                    <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                                    </svg>
-                                </a>
-
-                                <a href="https://traicypaccocolque.github.io/" target="_blank" class="person-item">
-                                    <div class="person-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-                                        </svg>
-                                    </div>
-                                    <span class="person-name">Traicy Pacco</span>
-                                    <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                                    </svg>
-                                </a>
-
-                                <a href="https://svr-glitch.github.io/SANTIAGO-VELASCO-RIVERA/" target="_blank" class="person-item">
-                                    <div class="person-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-                                        </svg>
-                                    </div>
-                                    <span class="person-name">Santiago Velasco</span>
-                                    <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                                    </svg>
-                                </a>
-
-                                <a href="https://chaskacandia.github.io/chaskacandiaochoa.github.io/" target="_blank" class="person-item">
-                                    <div class="person-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-                                        </svg>
-                                    </div>
-                                    <span class="person-name">Chaska Candia</span>
-                                    <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                                    </svg>
-                                </a>
-
-                                <a href="https://deza-ccama.github.io/marilyn-shiomara-deza-ccama/" target="_blank" class="person-item">
-                                    <div class="person-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-                                        </svg>
-                                    </div>
-                                    <span class="person-name">Marilyn Deza</span>
-                                    <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                                    </svg>
-                                </a>
-                            </div>
+                <div class="project-card">
+                    <img src="https://i.imgur.com/L5b7X6Z.png" alt="Website Portafolio" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Diseño y Desarrollo de Portafolio Personal (HTML/CSS)</h3>
+                        <p class="project-description">
+                            Creación de este sitio web personal utilizando HTML y CSS puro. Un proyecto enfocado en la presentación profesional de mi perfil académico y habilidades, aplicando principios de diseño responsivo.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag tag-red">HTML</span>
+                            <span class="tag tag-blue">CSS</span>
+                            <span class="tag tag-orange">Diseño Web</span>
                         </div>
-
-                        <!-- COLUMNA LINKEDIN -->
-                        <div>
-                            <h3 class="column-header">LinkedIn</h3>
-                            <div class="people-list">
-                                <a href="https://www.linkedin.com/in/marializcadenashuillcapacco/" target="_blank" class="person-item">
-                                    <div class="person-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                                        </svg>
-                                    </div>
-                                    <span class="person-name">Mariali Zcadenas</span>
-                                    <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                                    </svg>
-                                </a>
-
-                                <a href="https://www.linkedin.com/in/traicy-pacco-colque-01469b386/" target="_blank" class="person-item">
-                                    <div class="person-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                                        </svg>
-                                    </div>
-                                    <span class="person-name">Traicy Pacco</span>
-                                    <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                                    </svg>
-                                </a>
-
-                                <a href="https://www.linkedin.com/in/santiago-velasco-rivera/" target="_blank" class="person-item">
-                                    <div class="person-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                                        </svg>
-                                    </div>
-                                    <span class="person-name">Santiago Velasco</span>
-                                    <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                                    </svg>
-                                </a>
-
-                                <a href="https://www.linkedin.com/in/chaska-candia-ochoa-277079386/" target="_blank" class="person-item">
-                                    <div class="person-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                                        </svg>
-                                    </div>
-                                    <span class="person-name">Chaska Candia</span>
-                                    <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                                    </svg>
-                                </a>
-
-                                <a href="https://www.linkedin.com/in/marilyn-shiomara-deza-ccama-b7a191335" target="_blank" class="person-item">
-                                    <div class="person-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-                                        </svg>
-                                    </div>
-                                    <span class="person-name">Marilyn Deza</span>
-                                    <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
+                        <a href="https://github.com/tu-usuario/portafolio" target="_blank" class="project-link">Ver Código Fuente</a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>0 24 24">
-                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                                </svg>
-                            </div>
-                            <span class="person-name">Mariali Zcadenas Huillcapacco</span>
-                            <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                            </svg>
-                        </a>
 
-                        <a href="https://www.linkedin.com/in/traicy-pacco-colque-01469b386/" target="_blank" class="person-item">
-                            <div class="person-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                                </svg>
-                            </div>
-                            <span class="person-name">Traicy Pacco Colque</span>
-                            <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                            </svg>
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/santiago-velasco-rivera/" target="_blank" class="person-item">
-                            <div class="person-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                                </svg>
-                            </div>
-                            <span class="person-name">Santiago Velasco Rivera</span>
-                            <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                            </svg>
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/chaska-candia-ochoa-277079386/" target="_blank" class="person-item">
-                            <div class="person-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                                </svg>
-                            </div>
-                            <span class="person-name">Chaska Candia Ochoa</span>
-                            <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                            </svg>
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/marilyn-shiomara-deza-ccama-b7a191335" target="_blank" class="person-item">
-                            <div class="person-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                                </svg>
-                            </div>
-                            <span class="person-name">Marilyn Shiomara Deza Ccama</span>
-                            <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                            </svg>
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/angela-becerra-0b6ab6345/" target="_blank" class="person-item">
-                            <div class="person-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                                </svg>
-                            </div>
-                            <span class="person-name">Angela Becerra</span>
-                            <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                            </svg>
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/hector-ricardo-rodriguez-gaytan-76639437b" target="_blank" class="person-item">
-                            <div class="person-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                                </svg>
-                            </div>
-                            <span class="person-name">Héctor Ricardo Rodriguez Gaytán</span>
-                            <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                            </svg>
-                        </a>
-
-                        <a href="https://pe.linkedin.com/in/santiago-valdiviezo-1a4baa380" target="_blank" class="person-item">
-                            <div class="person-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                                </svg>
-                            </div>
-                            <span class="person-name">Santiago Valdiviezo</span>
-                            <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                            </svg>
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/valerie-carolina-gallardo-aguilar-7b7872274/" target="_blank" class="person-item">
-                            <div class="person-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                                </svg>
-                            </div>
-                            <span class="person-name">Valerie Carolina Gallardo Aguilar</span>
-                            <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                            </svg>
-                        </a>
-
-                        <a href="https://www.linkedin.com/in/owen-kurt-vilcarani-checca" target="_blank" class="person-item">
-                            <div class="person-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                                </svg>
-                            </div>
-                            <span class="person-name">Owen Kurt Vilcarani Checca</span>
-                            <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-                            </svg>
-                        </a>
+                <div class="project-card">
+                    <img src="https://i.imgur.com/h5E9w1J.png" alt="Análisis con SPSS" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Evaluación de Clima Organizacional con SPSS</h3>
+                        <p class="project-description">
+                            Estudio completo del clima laboral en una PYME utilizando encuestas y análisis de datos en SPSS. Se realizaron pruebas de hipótesis para identificar áreas de mejora en el comportamiento organizacional.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag tag-purple">SPSS</span>
+                            <span class="tag tag-green">RR.HH.</span>
+                            <span class="tag tag-yellow">Comportamiento</span>
+                        </div>
+                        <a href="#" class="project-link">Ver Informe (Confidencial)</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN CONTACTO -->
+    <section class="people-section">
+        <div class="people-container">
+
+            <div class="section-block">
+                <h2>Profesores Destacados</h2>
+                <div class="people-list">
+                    
+                    <a href="https://pe.linkedin.com/in/santiago-valdiviezo-1a4baa380" target="_blank" class="person-item">
+                        <div class="person-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
+                        </div>
+                        <span class="person-name">Santiago Valdiviezo</span>
+                        <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                        </svg>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/hector-ricardo-rodriguez-gaytan/" target="_blank" class="person-item">
+                        <div class="person-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                            </svg>
+                        </div>
+                        <span class="person-name">Héctor Ricardo Rodriguez Gaytán</span>
+                        <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="section-block">
+                <h2>Compañeros</h2>
+                <div class="people-two-columns">
+                    
+                    <div>
+                        <h3 class="column-header">GitHub</h3>
+                        <div class="people-list">
+                            <a href="https://marializcadenashuillcapacco.github.io/pagina-web/" target="_blank" class="person-item">
+                                <div class="person-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                                    </svg>
+                                </div>
+                                <span class="person-name">Mariali Zcadenas Huillcapacco</span>
+                                <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                                </svg>
+                            </a>
+                            <a href="https://chaskacandia.github.io/portafolio/" target="_blank" class="person-item">
+                                <div class="person-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                                    </svg>
+                                </div>
+                                <span class="person-name">Chaska Candia</span>
+                                <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="column-header">LinkedIn</h3>
+                        <div class="people-list">
+                            <a href="https://www.linkedin.com/in/traicy-pacco-colque-01469b386/" target="_blank" class="person-item">
+                                <div class="person-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                                    </svg>
+                                </div>
+                                <span class="person-name">Traicy Pacco Colque</span>
+                                <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/santiago-velasco-rivera/" target="_blank" class="person-item">
+                                <div class="person-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                                    </svg>
+                                </div>
+                                <span class="person-name">Santiago Velasco</span>
+                                <svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <section class="contact-section" id="contacto">
         <div class="container">
             <div class="section-title">
-                <h1>Contáctame</h1>
+                <h1>Contacto</h1>
             </div>
-
-            <p class="section-subtitle">
-                ¿Interesado en colaborar o conocer más sobre mi trabajo? Escríbeme, estoy siempre abierto a nuevas conexiones.
-            </p>
 
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h2>Información de contacto</h2>
+                    <h2>Información de Contacto</h2>
 
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -1881,9 +1787,9 @@
                             </svg>
                         </div>
                         <div class="contact-details">
-                            <div class="contact-label">Correo electrónico</div>
+                            <div class="contact-label">Email</div>
                             <div class="contact-value">
-                                <a href="mailto:Marian.perez@ucsp.edu.pe">Marian.perez@ucsp.edu.pe</a>
+                                <a href="mailto:mperezm10@ucsp.edu.pe">mperezm10@ucsp.edu.pe</a>
                             </div>
                         </div>
                     </div>
@@ -1891,7 +1797,7 @@
                     <div class="contact-item">
                         <div class="contact-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.28-.28.67-.36 1.02-.23 1.12.37 2.32.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                             </svg>
                         </div>
                         <div class="contact-details">
@@ -1923,59 +1829,56 @@
                         <div class="contact-details">
                             <div class="contact-label">LinkedIn</div>
                             <div class="contact-value">
-                                <a href="https://linkedin.com/in/tu-perfil" target="_blank">linkedin.com/in/tu-perfil</a>
+                                <a href="https://www.linkedin.com/in/marian-del-carmen-perez-machaca-338b55273" target="_blank">Perfil</a>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
                 <div class="contact-form">
-                    <h2>Envíame un mensaje</h2>
-                    <form onsubmit="event.preventDefault(); alert('Mensaje enviado. (Funcionalidad de envío requiere un servicio de backend)');">
+                    <h2>Envíame un Mensaje</h2>
+                    <form action="#" method="POST">
                         <div class="form-group">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" placeholder="Tu nombre completo" required>
+                            <label for="name">Nombre Completo</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="email">Correo electrónico</label>
-                            <input type="email" id="email" placeholder="tu@email.com" required>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" required></textarea>
                         </div>
-
-                        <button type="submit" class="submit-btn">Enviar mensaje</button>
+                        <button type="submit" class="submit-btn">Enviar Mensaje</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-section">
-                <h3>Mi Marian del Carmen Perez Machaca</h3>
-                <p>Estudiante de Administración comprometido con la excelencia académica y el desarrollo profesional continuo.</p>
+            <div class="footer-section about">
+                <h3>Marian del Carmen</h3>
+                <p>
+                    Estudiante de Ingeniería Empresarial con enfoque en recursos humanos y estrategia. Comprometida con la excelencia y la innovación.
+                </p>
             </div>
-
-            <div class="footer-section">
-                <h3>Enlaces rápidos</h3>
+            <div class="footer-section links">
+                <h3>Enlaces Rápidos</h3>
                 <ul class="footer-links">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#sobre-mi">Sobre mí</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#proyectos">Cursos Académicos</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </div>
-
-            <div class="footer-section">
+            <div class="footer-section social">
                 <h3>Sígueme</h3>
                 <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/tu-perfil-linkedin" target="_blank" class="social-icon" title="LinkedIn">
+                    <a href="https://www.linkedin.com/in/marian-del-carmen-perez-machaca-338b55273" target="_blank" class="social-icon" title="LinkedIn">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
                         </svg>
@@ -1987,12 +1890,7 @@
                     </a>
                     <a href="https://instagram.com/tu-usuario-instagram" target="_blank" class="social-icon" title="Instagram">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
-                        </svg>
-                    </a>
-                    <a href="mailto:Marian.perez@ucsp.edu.pe" class="social-icon" title="Email">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm0 2C5.7 4 4 5.7 4 7.8v8.4c0 2.1 1.7 3.8 3.8 3.8h8.4c2.1 0 3.8-1.7 3.8-3.8V7.8c0-2.1-1.7-3.8-3.8-3.8H7.8zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5.7-8.3a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5z"/>
                         </svg>
                     </a>
                 </div>
@@ -2000,19 +1898,18 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2024 Mi Portafolio Personal. Todos los derechos reservados.</p>
-            <p><a href="https://ucsp.edu.pe/" target="_blank">Universidad Católica San Pablo</a></p>
+            <p>&copy; 2025 Marian del Carmen Perez Machaca. Todos los derechos reservados.</p>
+            <p>Hecho con <span style="color: #667eea;">❤️</span> para la UCSP.</p>
         </div>
     </footer>
 
-    <!-- CHAT WIDGET FLOTANTE - WHATSAPP -->
-    <a href="https://wa.me/51994433226?text=Hola%20Marian,%20vi%20tu%20portafolio%20y%20me%20gustaría%20conectar" target="_blank" class="chat-widget">
-        <div class="chat-icon">
+    <a href="https://wa.me/+51994433226" target="_blank" class="chat-widget" title="Chatea por WhatsApp">
+        <span class="chat-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                <path d="M12 2a10 10 0 0 0-9.9 11.2l-.7 2.4-2.2 7.8 7.8-2.2 2.4-.7A10 10 0 1 0 12 2zm3.6 13.9c-.3.8-.9 1.4-1.6 1.7-.5.2-1.1.3-1.6.3-.6 0-1.1-.1-1.6-.3-.7-.3-1.3-.9-1.6-1.7-.2-.5-.3-1-.3-1.6 0-.6.1-1.1.3-1.6.3-.7.9-1.3 1.7-1.6.5-.2 1-.3 1.6-.3.6 0 1.1.1 1.6.3.7.3 1.3.9 1.6 1.7.2.5.3 1 .3 1.6 0 .6-.1 1.1-.3 1.6z"/>
             </svg>
-        </div>
-        <span>Contáctame por WhatsApp</span>
+        </span>
+        WhatsApp
     </a>
 
     <script>
@@ -2025,6 +1922,8 @@
         });
 
         function closeMenu() {
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.getElementById('menuToggle');
             if (navMenu.classList.contains('open')) {
                 navMenu.classList.remove('open');
                 menuToggle.classList.remove('open');
